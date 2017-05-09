@@ -1,6 +1,7 @@
 package eif203.labs.permutate;
 import java.util.*;
-
+import eif203.util.*;		
+	
 public static class Helper_Permutate{
 // Helper variables and helper functions
 int swaps = 0;            // counts swaps
@@ -37,23 +38,24 @@ public static void swap(char[] a, int i, int j){
 /*
   inserts x a every position i in p with counting
 */
+
 public static void  insertAt(String[] p, int i, String x){
 	
-	String res = [];
+	List<String> res = new ArrayList<>();
 	for(int k = 0; k < i; k++){
-		insertions++;
-		res.push(p[k]);
+		insertions++; 
+		res.add(p[k]);
 	}
 	insertions++;
-	res.push(x);
+	res.add(x);
 	for(int k = i; k < p.length; k++){
 		insertions++;
-		res.push(p[k]);//preguntar
+		res.add(p[k]);
 	}
 	return res;
-}
+}//Estara bien?
 
-public static void fact(n){
+public static void fact(n){ //n viene de test_all.js
 	int f = 1;
 	for (int i = 1; i <=n; f *= i, i++);
 	return f;
@@ -62,7 +64,7 @@ public static void fact(n){
 public static char genArray(n){
 	n = n || DEFAULT_PERMUT_SIZE;
 	n = n % baseArray.length;
-	return baseArray.slice(0, n);
+	return Array.copyOfRange(baseArray, 0 , n);
 }
 
 

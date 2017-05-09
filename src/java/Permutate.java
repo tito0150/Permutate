@@ -41,7 +41,7 @@ static public void recursive_backtracking(string[] a, int i ) {
   2) Recursivo Heap-Sedgewick
 */
 
-function recursive_heap_sedgewick(a, i, doit){
+function recursive_heap_sedgewick(String[] a, int i, doit){
 	incMargin();
 	printMargin('Enter Round i=' + i + ' ' + a);
 	if (i == 0){
@@ -63,7 +63,7 @@ function recursive_heap_sedgewick(a, i, doit){
   3) Lexicografico
 */
 function next_lexicographic_permutation(a){
-	var i, k;
+	int i, k;
 	// Find a peak;
 	for( i = a.length - 2; i > 0 && a[i] > a[i + 1]; i-- );
 	if (i < 0){
