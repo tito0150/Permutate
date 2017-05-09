@@ -1,0 +1,24 @@
+
+*** load_permutate done OK ***
+
+
+*** Testing all permutation methods with 3 objects ***
+
+
+*** Testing recursive_backtracking ***
+
+*** Count of recursive_backtracking swaps = 40 (203 ms)
+
+*** Testing recursive_heap_sedgewick ***
+
+*** Count of recursive_heap_sedgewick swaps = 24 (16 ms)
+
+*** Testing lexicographically ***
+
+*** Count of lexicographically swaps = 32 (31 ms)
+
+*** Testing naive all_permutations ***
+
+*** Count of naive all insertions = 22 (47 ms)
+
+ *** Finished ***
