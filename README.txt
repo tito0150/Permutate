@@ -1,5 +1,5 @@
 loriacarlos@gmail.com EIF203 2017
-
+PROBAR JS
 1) 
 Para cargar y probar los algoritmos manualmente
 En CMD
@@ -17,3 +17,7 @@ jjs> test_recursive_heap_sedgewick()
 Para probarlos todos (la salida queda en out.txt)
 En CMD teclear (out.txt contiene la salida)
 bats\exec_all out.txt
+
+PROBAR JAVA
+
+bats\exec_all_java out_java.txt

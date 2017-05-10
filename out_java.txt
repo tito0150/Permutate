@@ -1,0 +1,27 @@
+
+*** Testing all permutation methods with 3 objects ***
+
+
+ *** test_recursive_backtracking NOT IMPLEMENTED!! ***
+
+ *** test_recursive_heap_sedgewick NOT IMPLEMENTED!! ***
+
+*** Testing lexicographically ***
+Round i=0 [A, B, C]
+  1) [A, B, C]
+Round i=1 [A, C, B]
+  2) [A, C, B]
+Round i=2 [B, A, C]
+  3) [B, A, C]
+Round i=3 [B, C, A]
+  4) [B, C, A]
+Round i=4 [C, A, B]
+  5) [C, A, B]
+Round i=5 [C, B, A]
+  6) [C, B, A]
+
+*** Count of lexicographically swaps = 32 (114 ms)
+
+ ***test_permutate_naive NOT IMPLEMENTED!! ***
+
+ *** Finished ***

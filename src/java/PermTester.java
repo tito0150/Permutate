@@ -38,7 +38,7 @@ public class PermTester extends Hashtable<String, Permutation> {
 		}
 		String key = p.toString();
 		if ( get(key) != null){
-			throw new RuntimeException("Duplicated key: " + key);
+			throw new RuntimeException("Duplicated key: " + key +  " size= ");
 		}
 		if (p.size() != this.n){
 			throw new RuntimeException("Invalid size: " + p.size() + " != " + this.n);

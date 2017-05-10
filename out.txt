@@ -7,18 +7,18 @@
 
 *** Testing recursive_backtracking ***
 
-*** Count of recursive_backtracking swaps = 40 (203 ms)
+*** Count of recursive_backtracking swaps = 40 (206 ms)
 
 *** Testing recursive_heap_sedgewick ***
 
-*** Count of recursive_heap_sedgewick swaps = 24 (16 ms)
+*** Count of recursive_heap_sedgewick swaps = 24 (22 ms)
 
 *** Testing lexicographically ***
 
-*** Count of lexicographically swaps = 32 (31 ms)
+*** Count of lexicographically swaps = 32 (38 ms)
 
 *** Testing naive all_permutations ***
 
-*** Count of naive all insertions = 22 (47 ms)
+*** Count of naive all insertions = 22 (88 ms)
 
  *** Finished ***
