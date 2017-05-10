@@ -12,6 +12,48 @@ public class Permutate  {
 	public Permutate(Helper helper){
 		this.helper = helper;
 	}
+	
+	public void recursive_backtracking(String[] a, int i, /*doit*/){
+	helper.incMargin();
+	helper.printMargin('Enter Round i=' + i + ' ' + a);
+	if (i == 0){
+		//doit(a);
+		decMargin();
+	    return;
+	}
+	
+	for (int j = 0; j <= i; j++){
+		printMargin('Enter cycle i=' + i + ' j=' + j + ' ' + a);
+		helper.swap(a, i, j);
+		recursive_backtracking(a, i - 1, doit);
+		helper.swap(a, i, j);
+	}
+	
+	helper.printMargin('Leave Round i=' + i + ' ' + a);
+	helper.decMargin();
+	
+	}
+	
+	
+	public void recursive_heap_sedgewick(String[] a, int i, /*doit*/){
+	helper.incMargin();
+	helper.printMargin('Enter Round i=' + i + ' ' + a);
+	if (i == 0){
+	   //doit(a);
+	   helper.decMargin();
+	   return;
+	}
+	for (int j = 0; j <= i; j++){
+		recursive_heap_sedgewick(a, i - 1, /*doit*/);
+		helper.printMargin('return-and-swap: i=' + i + ' j=' + j);
+		helper.swap(a, i % 2 ? j : 0, i);
+	}
+	helper.printMargin('Leave Round i=' + i + ' ' + a);
+	helper.decMargin();
+	
+	
+	
+	
 	public void next_lexicographic_permutation(String[] a){
 		int i, k;
 		// Find a peak;
