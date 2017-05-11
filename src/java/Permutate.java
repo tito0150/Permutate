@@ -13,12 +13,12 @@ public class Permutate  {
 		this.helper = helper;
 	}
 	
-	public void recursive_backtracking(String[] a, int i, /*doit*/){
+	public void recursive_backtracking(String[] a, int i, Function<String[], Void> doit){
 	helper.incMargin();
 	helper.printMargin('Enter Round i=' + i + ' ' + a);
 	if (i == 0){
-		//doit(a);
-		decMargin();
+		doit(a);
+		helper.decMargin();
 	    return;
 	}
 	
@@ -35,16 +35,16 @@ public class Permutate  {
 	}
 	
 	
-	public void recursive_heap_sedgewick(String[] a, int i, /*doit*/){
+	public void recursive_heap_sedgewick(String[] a, int i, Function<String[], Void> doit){
 	helper.incMargin();
 	helper.printMargin('Enter Round i=' + i + ' ' + a);
 	if (i == 0){
-	   //doit(a);
+	   doit(a);
 	   helper.decMargin();
 	   return;
 	}
 	for (int j = 0; j <= i; j++){
-		recursive_heap_sedgewick(a, i - 1, /*doit*/);
+		recursive_heap_sedgewick(a, i - 1, doit);
 		helper.printMargin('return-and-swap: i=' + i + ' j=' + j);
 		helper.swap(a, i % 2 ? j : 0, i);
 	}
