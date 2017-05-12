@@ -15,21 +15,21 @@ public class Permutate  {
 	
 	public void recursive_backtracking(String[] a, int i, Function<String[], Void> doit){
 	helper.incMargin();
-	helper.printMargin('Enter Round i=' + i + ' ' + a);
+	helper.printMargin("Enter Round i=" + i + " " + Arrays.toString(a));
 	if (i == 0){
-		doit(a);
+		doit.apply(a);
 		helper.decMargin();
 	    return;
 	}
 	
 	for (int j = 0; j <= i; j++){
-		printMargin('Enter cycle i=' + i + ' j=' + j + ' ' + a);
+		helper.printMargin("Enter cycle i= " + i + " j= " + j + " " + Arrays.toString(a));
 		helper.swap(a, i, j);
 		recursive_backtracking(a, i - 1, doit);
 		helper.swap(a, i, j);
 	}
 	
-	helper.printMargin('Leave Round i=' + i + ' ' + a);
+	helper.printMargin("Leave Round i=" + i + " " + Arrays.toString(a));
 	helper.decMargin();
 	
 	}
@@ -37,20 +37,20 @@ public class Permutate  {
 	
 	public void recursive_heap_sedgewick(String[] a, int i, Function<String[], Void> doit){
 	helper.incMargin();
-	helper.printMargin('Enter Round i=' + i + ' ' + a);
+	helper.printMargin("Enter Round i=" + i + " " + Arrays.toString(a));
 	if (i == 0){
-	   doit(a);
+	   doit.apply(a);
 	   helper.decMargin();
 	   return;
 	}
 	for (int j = 0; j <= i; j++){
 		recursive_heap_sedgewick(a, i - 1, doit);
-		helper.printMargin('return-and-swap: i=' + i + ' j=' + j);
-		helper.swap(a, i % 2 ? j : 0, i);
+		helper.printMargin("return-and-swap: i=" + i + " j=" + j);
+		helper.swap(a, (i % 2==0) ? j : 0, i);
 	}
-	helper.printMargin('Leave Round i=' + i + ' ' + a);
+	helper.printMargin("Leave Round i=" + i + " " + Arrays.toString(a));
 	helper.decMargin();
-	
+	}
 	
 	
 	

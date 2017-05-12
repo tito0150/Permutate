@@ -22,11 +22,34 @@ public class TestPermutate extends Helper {
 		permTester.ensureComplete();
 	}
 	public void test_recursive_backtracking(int n){
-		// To do
-		print("\n *** test_recursive_backtracking NOT IMPLEMENTED!! ***");
+		print("\n *** Testing recursive_backtracking ***"); 
+		reset();
+		String[] a = genArray(n);
+		method = BACKTRACKING;
+		permTester = new PermTester(method, n);
+		long before = cTM();
+		this.perm.recursive_backtracking(a, a.length -1 , (String[] p) -> {this.showPermutation(p); return null;});
+		long  after = cTM();
+		print("\n*** Count of recursive_backtracking swaps = " + swaps + " (" + (after - before) + " ms)");
+		permTester.ensureComplete();
+		
+			
+
 	}
+	
 	public void test_recursive_heap_sedgewick(int n){
-		print("\n *** test_recursive_heap_sedgewick NOT IMPLEMENTED!! ***");
+		print("\n *** Testing recursive_heap_sedgewick ***");
+		reset();
+		String[] a = genArray(n);
+		method = HEAP_SEDGEWICK;
+		permTester = new PermTester(method, n);
+		long before = cTM();
+		this.perm.recursive_heap_sedgewick(a, a.length -1 , (String[] p) -> {this.showPermutation(p); return null;});
+		long  after = cTM();
+		print("\n*** Count of recursive_heap_sedgewick swaps = " + swaps + " (" + (after - before) + " ms)");
+		permTester.ensureComplete();
+			
+		
 	}
 	public void test_permutate_naive(int n){
 		print("\n ***test_permutate_naive NOT IMPLEMENTED!! ***");
