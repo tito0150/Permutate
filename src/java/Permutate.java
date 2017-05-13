@@ -46,7 +46,7 @@ public class Permutate  {
 	for (int j = 0; j <= i; j++){
 		recursive_heap_sedgewick(a, i - 1, doit);
 		helper.printMargin("return-and-swap: i=" + i + " j=" + j);
-		helper.swap(a, (i % 2==0) ? j : 0, i);
+		helper.swap(a, (i % 2 != 0) ? j : 0 , i);
 	}
 	helper.printMargin("Leave Round i=" + i + " " + Arrays.toString(a));
 	helper.decMargin();
@@ -54,7 +54,7 @@ public class Permutate  {
 	
 	
 	
-	public void next_lexicographic_permutation(String[] a){
+public void next_lexicographic_permutation(String[] a){
 		int i, k;
 		// Find a peak;
 		for( i = a.length - 2; i > 0 && a[i].compareTo(a[i + 1]) > 0; i-- );

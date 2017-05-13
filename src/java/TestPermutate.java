@@ -21,6 +21,7 @@ public class TestPermutate extends Helper {
 		print("\n*** Count of lexicographically swaps = " + swaps + " (" + (after - before) + " ms)");
 		permTester.ensureComplete();
 	}
+	
 	public void test_recursive_backtracking(int n){
 		print("\n *** Testing recursive_backtracking ***"); 
 		reset();
