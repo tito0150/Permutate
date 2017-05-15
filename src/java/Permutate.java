@@ -46,7 +46,7 @@ public class Permutate  {
 	for (int j = 0; j <= i; j++){
 		recursive_heap_sedgewick(a, i - 1, doit);
 		helper.printMargin("return-and-swap: i=" + i + " j=" + j);
-		helper.swap(a, (i % 2==0) ? j : 0, i);
+		helper.swap(a, (i % 2!=0) ? j : 0, i);
 	}
 	helper.printMargin("Leave Round i=" + i + " " + Arrays.toString(a));
 	helper.decMargin();
