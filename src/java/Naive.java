@@ -11,9 +11,6 @@ import java.lang.Object.*;
 		this.helper = helper;
 	}
 
-	public Naive(){
-	}
-
 	public String[][] permutate_naively(String[] p){
 		if (p.length == 0) 
 			return null; 
