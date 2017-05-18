@@ -9,8 +9,10 @@ import eif203.labs.permutate.util.*;
 */
 public class Permutate  {
 	Helper helper;
+	Naive naive;
 	public Permutate(Helper helper){
 		this.helper = helper;
+		naive = new Naive(helper);
 	}
 	
 	public void recursive_backtracking(String[] a, int i, Function<String[], Void> doit){
@@ -36,25 +38,25 @@ public class Permutate  {
 	
 	
 	public void recursive_heap_sedgewick(String[] a, int i, Function<String[], Void> doit){
-	helper.incMargin();
-	helper.printMargin("Enter Round i=" + i + " " + Arrays.toString(a));
-	if (i == 0){
-	   doit.apply(a);
-	   helper.decMargin();
-	   return;
-	}
-	for (int j = 0; j <= i; j++){
-		recursive_heap_sedgewick(a, i - 1, doit);
-		helper.printMargin("return-and-swap: i=" + i + " j=" + j);
-		helper.swap(a, (i % 2 != 0) ? j : 0 , i);
-	}
-	helper.printMargin("Leave Round i=" + i + " " + Arrays.toString(a));
-	helper.decMargin();
+		helper.incMargin();
+		helper.printMargin("Enter Round i=" + i + " " + Arrays.toString(a));
+		if (i == 0){
+			doit.apply(a);
+			helper.decMargin();
+			return;
+		}
+		for (int j = 0; j <= i; j++){
+			recursive_heap_sedgewick(a, i - 1, doit);
+			helper.printMargin("return-and-swap: i=" + i + " j=" + j);
+			helper.swap(a, (i % 2 != 0) ? j : 0 , i);
+		}
+		helper.printMargin("Leave Round i=" + i + " " + Arrays.toString(a));
+		helper.decMargin();
 	}
 	
 	
 	
-public void next_lexicographic_permutation(String[] a){
+	public void next_lexicographic_permutation(String[] a){
 		int i, k;
 		// Find a peak;
 		for( i = a.length - 2; i > 0 && a[i].compareTo(a[i + 1]) > 0; i-- );
@@ -70,6 +72,7 @@ public void next_lexicographic_permutation(String[] a){
 			helper.swap(a, l, r);
 		}
     }
+	
     public void  permutate_lexicographically(String[] a, Function<String[], Void> doit){
 		for (int i = 0; i < helper.fact(a.length); i++){
 			helper.printMargin("Round i=" + i + " " + Arrays.toString(a));
@@ -78,5 +81,9 @@ public void next_lexicographic_permutation(String[] a){
 			
 		}
 		
+	}
+	
+	public String[][] permutate_naively(String[] p){
+		return naive.permutate_naively(p);
 	}
 }
